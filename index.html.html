@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ryan Araujo | Infraestrutura • NOC • Observabilidade</title>
+<meta name="description" content="Portfólio profissional de Ryan Araujo — Infraestrutura de TI, NOC, Observabilidade, Zabbix e Grafana.">
+<style>
+:root{
+  --bg:#070b12; --panel:#0d1420; --panel2:#111b29; --line:#1d2b3d;
+  --text:#edf4fb; --muted:#8ea1b6; --accent:#25d9ff; --accent2:#7c5cff;
+  --ok:#35e28a; --shadow:0 24px 70px rgba(0,0,0,.35);
+}
+*{box-sizing:border-box;scroll-behavior:smooth}
+body{margin:0;background:radial-gradient(circle at 85% 5%,rgba(37,217,255,.10),transparent 28%),radial-gradient(circle at 10% 35%,rgba(124,92,255,.08),transparent 25%),var(--bg);color:var(--text);font-family:Inter,Segoe UI,Arial,sans-serif;line-height:1.6}
+a{color:inherit;text-decoration:none}
+.container{width:min(1160px,92%);margin:auto}
+nav{position:fixed;top:0;left:0;right:0;z-index:10;background:rgba(7,11,18,.78);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.06)}
+.navin{height:72px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-weight:800;letter-spacing:.08em}.logo span{color:var(--accent)}
+.navlinks{display:flex;gap:25px;color:#b9c8d8;font-size:.9rem}
+.navlinks a:hover{color:var(--accent)}
+.hero{min-height:100vh;display:grid;align-items:center;padding:120px 0 70px}
+.gridhero{display:grid;grid-template-columns:1.25fr .75fr;gap:55px;align-items:center}
+.kicker{display:inline-flex;gap:9px;align-items:center;border:1px solid var(--line);background:rgba(255,255,255,.025);padding:8px 13px;border-radius:999px;color:#b8c9db;font-size:.82rem}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--ok);box-shadow:0 0 18px var(--ok)}
+h1{font-size:clamp(3rem,7vw,6.2rem);line-height:.94;letter-spacing:-.07em;margin:22px 0}
+h1 span{color:var(--accent)}
+.hero p{font-size:1.12rem;color:var(--muted);max-width:720px}
+.cta{display:flex;gap:12px;margin-top:30px;flex-wrap:wrap}
+.btn{padding:12px 18px;border-radius:10px;border:1px solid var(--line);font-weight:700}
+.btn.primary{background:var(--accent);color:#031018;border-color:var(--accent)}
+.btn:hover{transform:translateY(-2px)}
+.terminal{background:linear-gradient(145deg,#101b29,#091019);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);overflow:hidden}
+.termhead{padding:12px 16px;border-bottom:1px solid var(--line);color:#71859a;font-size:.78rem}
+.term{padding:22px;font-family:Consolas,monospace;font-size:.88rem;color:#a9bed0}
+.term .c{color:var(--accent)}.term .g{color:var(--ok)}.term .p{color:#a996ff}
+section{padding:95px 0}
+.eyebrow{color:var(--accent);font-weight:800;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase}
+h2{font-size:clamp(2rem,4vw,3.4rem);line-height:1.05;letter-spacing:-.04em;margin:10px 0 18px}
+.lead{color:var(--muted);max-width:760px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:35px}
+.card{background:linear-gradient(145deg,rgba(17,27,41,.92),rgba(10,16,25,.92));border:1px solid var(--line);border-radius:16px;padding:25px;transition:.25s}
+.card:hover{transform:translateY(-5px);border-color:#2a4964}
+.card h3{margin:10px 0 8px}.card p{color:var(--muted);font-size:.94rem}
+.icon{font-size:1.5rem}
+.tags{display:flex;gap:7px;flex-wrap:wrap;margin-top:18px}
+.tag{font-size:.72rem;padding:5px 8px;border:1px solid var(--line);border-radius:6px;color:#b8c8d7}
+.timeline{position:relative;margin-top:45px;border-left:1px solid var(--line);padding-left:32px}
+.item{position:relative;margin-bottom:40px}.item:before{content:"";position:absolute;left:-39px;top:7px;width:12px;height:12px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 5px var(--bg),0 0 20px rgba(37,217,255,.45)}
+.item .date{color:var(--accent);font-size:.8rem;font-weight:800}.item h3{margin:5px 0}.item p{color:var(--muted);margin:0}
+.case{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:35px}
+.casebox{min-height:260px;background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:30px;position:relative;overflow:hidden}
+.casebox:after{content:"";position:absolute;width:240px;height:240px;right:-90px;bottom:-100px;border-radius:50%;background:rgba(37,217,255,.08)}
+.metric{font-size:2.6rem;font-weight:850;letter-spacing:-.05em}.metric small{font-size:.85rem;color:var(--muted);font-weight:500}
+.arch{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;align-items:center;margin-top:25px}
+.arch div{background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:13px 8px;text-align:center;font-size:.75rem;color:#c2d2e1}
+.arch b{color:var(--accent);text-align:center}
+.contact{background:linear-gradient(135deg,rgba(37,217,255,.08),rgba(124,92,255,.07));border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+footer{padding:35px 0;color:#6f8193;font-size:.82rem}
+@media(max-width:800px){
+ .gridhero,.case{grid-template-columns:1fr}.cards{grid-template-columns:1fr}.navlinks{display:none}.hero{padding-top:110px}
+ .arch{grid-template-columns:1fr}.arch b{transform:rotate(90deg)}
+}
+</style>
+</head>
+<body>
+<nav><div class="container navin">
+  <a class="logo" href="#top">RYAN<span>.</span></a>
+  <div class="navlinks"><a href="#sobre">Sobre</a><a href="#experiencia">Experiência</a><a href="#projetos">Projetos</a><a href="#stack">Stack</a><a href="#contato">Contato</a></div>
+</div></nav>
+
+<main id="top">
+<section class="hero"><div class="container gridhero">
+  <div>
+    <div class="kicker"><span class="dot"></span> Infraestrutura • NOC • Observabilidade</div>
+    <h1>Ryan<br><span>Araujo.</span></h1>
+    <p>Profissional de Infraestrutura de TI e Observabilidade, com foco em alta disponibilidade, continuidade e performance de ambientes de rede críticos.</p>
+    <div class="cta">
+      <a class="btn primary" href="#projetos">Ver projetos</a>
+      <a class="btn" href="https://www.linkedin.com/in/ryannaraujo46" target="_blank">LinkedIn ↗</a>
+    </div>
+  </div>
+  <div class="terminal">
+    <div class="termhead">ryan@noc:~$ observability --profile</div>
+    <div class="term">
+      <div><span class="p">role</span> = <span class="c">"Infraestrutura Sênior"</span></div>
+      <div><span class="p">focus</span> = [<span class="c">"NOC"</span>, <span class="c">"Zabbix"</span>, <span class="c">"Grafana"</span>]</div>
+      <div><span class="p">telemetry</span> = <span class="g">"SNMP / métricas / alertas"</span></div>
+      <div><span class="p">incident</span> = <span class="g">"detect → analyze → resolve"</span></div>
+      <br><div><span class="g">● operational mindset: ON</span></div>
+    </div>
+  </div>
+</div></section>
+
+<section id="sobre"><div class="container">
+  <div class="eyebrow">01 / Perfil</div><h2>Infraestrutura orientada por observabilidade.</h2>
+  <p class="lead">Minha trajetória em TI evoluiu do suporte técnico para infraestrutura e observabilidade. Hoje atuo com monitoramento proativo, telemetria, diagnóstico de conectividade, gestão de incidentes, relacionamento com operadoras e construção de indicadores para apoiar decisões operacionais.</p>
+  <div class="cards">
+    <article class="card"><div class="icon">◉</div><h3>Observabilidade</h3><p>Monitoramento de métricas, alertas, templates, descoberta e telemetria com Zabbix e Grafana.</p></article>
+    <article class="card"><div class="icon">⌁</div><h3>NOC & Incidentes</h3><p>Triagem, análise, escalonamento, acompanhamento de incidentes críticos e tratativas com fornecedores.</p></article>
+    <article class="card"><div class="icon">▣</div><h3>Dados & Operação</h3><p>Dashboards, relatórios, indicadores, documentação e padronização de processos operacionais.</p></article>
+  </div>
+</div></section>
+
+<section id="experiencia"><div class="container">
+  <div class="eyebrow">02 / Evolução</div><h2>Uma trajetória construída em TI.</h2>
+  <p class="lead">Progressão profissional na Vonex, partindo do atendimento e suporte para uma atuação focada em infraestrutura e observabilidade.</p>
+  <div class="timeline">
+    <div class="item"><div class="date">JUN 2026 — ATUAL</div><h3>Técnico de Infraestrutura Sênior · Vonex</h3><p>Monitoramento com Zabbix/Grafana, incidentes críticos, automações, fornecedores de telecom, SLAs, recursos de infraestrutura, dashboards e documentação.</p></div>
+    <div class="item"><div class="date">FEV 2026 — JUN 2026</div><h3>Técnico de Infraestrutura Pleno · Vonex</h3><p>Monitoramento proativo de links, servidores e ativos de rede; tratamento de alertas, incidentes, chamados, dashboards e escalonamentos.</p></div>
+    <div class="item"><div class="date">MAR 2025 — FEV 2026</div><h3>Técnico de HelpDesk Júnior · Vonex</h3><p>Atendimento, diagnóstico de hardware/software/rede, suporte remoto, configuração de software, contas, acessos e escalonamento.</p></div>
+  </div>
+</div></section>
+
+<section id="projetos"><div class="container">
+  <div class="eyebrow">03 / Projetos</div><h2>Projetos que representam minha atuação.</h2>
+  <p class="lead">Cases baseados nas atividades e projetos descritos no meu perfil profissional, apresentados como portfólio técnico.</p>
+  <div class="case">
+    <article class="casebox"><div class="eyebrow">CASE 01</div><h3>Plataforma de Observabilidade</h3><p>Arquitetura de monitoramento proativo utilizando Zabbix e Grafana para acompanhar conectividade, servidores e ativos de rede.</p><div class="tags"><span class="tag">ZABBIX</span><span class="tag">GRAFANA</span><span class="tag">SNMP</span><span class="tag">LLD</span></div></article>
+    <article class="casebox"><div class="eyebrow">CASE 02</div><h3>Dashboards para NOC</h3><p>Construção de dashboards e indicadores para transformar telemetria em visibilidade operacional e apoiar o acompanhamento da saúde dos ambientes.</p><div class="tags"><span class="tag">NOC</span><span class="tag">KPI</span><span class="tag">TELEMETRIA</span><span class="tag">SLA</span></div></article>
+    <article class="casebox"><div class="eyebrow">CASE 03</div><h3>Gestão de Incidentes de Telecom</h3><p>Diagnóstico de conectividade, isolamento de falhas, acionamento de operadoras e fornecedores, acompanhamento de SLAs e documentação das tratativas.</p><div class="tags"><span class="tag">NETWORKING</span><span class="tag">ITSM</span><span class="tag">INCIDENTES</span></div></article>
+    <article class="casebox"><div class="eyebrow">CASE 04</div><h3>Automação Operacional</h3><p>Desenvolvimento de automações e scripts para otimizar processos, reduzir tempo de resolução e aumentar a eficiência operacional.</p><div class="tags"><span class="tag">AUTOMAÇÃO</span><span class="tag">SCRIPTS</span><span class="tag">PROCESSOS</span></div></article>
+  </div>
+  <div class="arch">
+    <div>INFRAESTRUTURA</div><b>→</b><div>ZABBIX</div><b>→</b><div>GRAFANA</div><b>→</b><div>NOC</div><b>→</b><div>INCIDENTE / AÇÃO</div>
+  </div>
+</div></section>
+
+<section id="stack"><div class="container">
+  <div class="eyebrow">04 / Stack</div><h2>Tecnologias & competências.</h2>
+  <div class="cards">
+    <article class="card"><h3>Monitoramento</h3><div class="tags"><span class="tag">Zabbix</span><span class="tag">Grafana</span><span class="tag">SNMP</span><span class="tag">Telemetria</span></div></article>
+    <article class="card"><h3>Infraestrutura</h3><div class="tags"><span class="tag">Linux</span><span class="tag">Servidores</span><span class="tag">Redes</span><span class="tag">Conectividade</span></div></article>
+    <article class="card"><h3>Operação</h3><div class="tags"><span class="tag">NOC</span><span class="tag">ITSM</span><span class="tag">SLA</span><span class="tag">Incidentes</span><span class="tag">Documentação</span></div></article>
+  </div>
+</div></section>
+
+<section><div class="container">
+  <div class="eyebrow">05 / Formação</div><h2>Formação contínua.</h2>
+  <div class="case">
+    <article class="casebox"><div class="metric">2024–2026</div><h3>Gestão da Tecnologia da Informação</h3><p>UNINTER Centro Universitário Internacional</p></article>
+    <article class="casebox"><div class="metric">Networking</div><h3>Networking Basics</h3><p>Certificação registrada no perfil profissional.</p></article>
+  </div>
+</div></section>
+
+<section id="contato" class="contact"><div class="container">
+  <div class="eyebrow">06 / Contato</div><h2>Vamos conectar.</h2>
+  <p class="lead">Interessado em oportunidades de Infraestrutura, NOC, Observabilidade e operações de TI.</p>
+  <div class="cta">
+    <a class="btn primary" href="mailto:ryann.araujo46@gmail.com">ryann.araujo46@gmail.com</a>
+    <a class="btn" href="https://www.linkedin.com/in/ryannaraujo46" target="_blank">LinkedIn ↗</a>
+  </div>
+</div></section>
+</main>
+<footer><div class="container">© 2026 Ryan Araujo · Infraestrutura de TI • NOC • Observabilidade</div></footer>
+</body>
+</html>
